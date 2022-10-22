@@ -1,5 +1,11 @@
-extends layout
+extends global/layout
 
 block content
-    h1 #{name}
-    img(src=img_src)
+    div.container
+        div.wrapper
+            //- - const pokemonName = 'pikachu'
+            //- - const formAction = `/pokemon/${pokemonName}`
+            form#searchPokemon
+                input#searchInput(type="text" required)
+                button submit
+    script(src="./js/search.js")
