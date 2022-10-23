@@ -1,0 +1,20 @@
+.container {
+    width: min(100%, 1440px);
+    margin: 0 auto;
+}
+
+// flex classes
+%flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    @extend %flex;
+}
+
+.flex-column {
+    @extend %flex;
+    flex-direction: column;
+}

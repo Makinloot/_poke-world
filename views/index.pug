@@ -8,8 +8,9 @@ html
         link(rel="stylesheet" type="text/css" href="./css/style.css")
     body 
         div.container
-            div.wrapper
-                form#searchPokemon
+            div.home.flex-row
+                form#searchPokemon.home-form.flex-column
+                    label(for='searchInput') Search here
                     input#searchInput(type="text" required)
                     button submit
         script(type="module" src="./script.js")

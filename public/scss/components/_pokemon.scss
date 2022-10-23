@@ -1,0 +1,40 @@
+.pokemon {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    // place-items: center center;
+    gap: .5rem;
+    padding: .5rem;
+
+    background-color: green;
+    &-img {
+        background-color: rgb(111, 133, 111);
+        
+        
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+        
+    }
+    &-text {
+        background-color: rgb(111, 133, 111);
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+        h2 {
+            text-transform: capitalize;
+            font-family: 'Righteous', cursive;
+        }
+    }
+    
+    &-stats {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        .row-item {
+            border: 1px solid;
+        }
+    }
+}

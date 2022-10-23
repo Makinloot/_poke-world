@@ -7,12 +7,17 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
-        h1 Oops.. Page does not exist !
-        a(href="http://localhost:3000") main page
+        //- a(href="http://localhost:3000") main page
 
-        div.container
-            div.wrapper
-                form#searchPokemon
-                    input#searchInput(type="text" required)
-                    button submit
+        main
+            div.container
+                div.error.flex-column
+                    div.error-img 
+                        img(src="../../images/404.png" alt="error 404")
+                    p.error-text Oops, this page does not exist.
+                    form.error-form.flex-column#searchPokemon
+                        label(for="searchInput") Search here
+                        input#searchInput(type="text" required)
+                        button submit
+                    a.home-link(href="../../index.html") main page
         script(type="module" src="../../script.js")

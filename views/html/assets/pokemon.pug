@@ -5,14 +5,35 @@ html
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
-        h1 #{name}
-        img(src=img_src)
-        div.container
-            div.wrapper
-                form#searchPokemon
-                    input#searchInput(type="text" required)
-                    button submit
-            a(href="http://localhost:3000") main page
+        //- h1 #{name}
+        //- div
+        //-     img(src=img_src)
+        main
+            div.container
+                div.pokemon
+                    .pokemon-img
+                        img(src=img_src alt=name title=name)
+                    .pokemon-text.flex-column
+                        h2 #{name}
+                        p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae sint et corporis laudantium aut at, laboriosam non sit cumque nihil, est voluptatem ad. Vero, qui error? Perspiciatis quae qui ex, tempora, provident recusandae numquam aliquam in voluptatem quam beatae nemo, quod cumque laborum. Non accusamus corrupti mollitia quam minus quae repellat nobis sunt inventore eos exercitationem quidem odit earum maiores quod architecto aperiam, ullam tenetur ut qui in deleniti.
+                    .pokemon-stats
+                        - const pokemonStats = stats;
+                        - const statsNames = stats_names;
+                        //- each name in statsNames
+                        each stat, i in pokemonStats
+                            .row-item.flex-row= stat
+                                span= statsNames[i]
+                                
+                        //- - const statsArr = stats;
+                        //- each stat in statsArr
+                        //-         p= stat
+
+                //- div
+                    //- form#searchPokemon.pokemon-form
+                    //-     input#searchInput(type="text" required)
+                    //-     button submit
+                //- a(href="http://localhost:3000") main page
         script(type="module" src="../../script.js")
