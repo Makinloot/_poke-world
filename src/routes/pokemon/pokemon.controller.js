@@ -7,13 +7,12 @@ async function httpGetPokemon(req, res) {
         const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
         const api_res = await fetch(url);
         const api_data = await api_res.json();
-        res.render('assets/pokemon', {
+        res.render('html/assets/pokemon', {
             name: api_data.name,
             img_src: api_data.sprites.other['official-artwork'].front_default || api_data.sprites.front_default,
         });
     } catch (error) {
-        // TODO: return 404 error page
-        console.log(error);
+        res.render('html/assets/404');
     }
 }
 

@@ -1,11 +1,12 @@
 {
   "type": "module",
-  "name": "_poke-world",
+  "name": "poke-world",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "startDev": "nodemon src/index.js"
+    "startDev": "nodemon src/index.js",
+    "renderPug": "pug -w ./views -o ./public -P"
   },
   "keywords": [],
   "author": "",

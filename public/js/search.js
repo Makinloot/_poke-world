@@ -1,31 +1,30 @@
-console.log('red');
-const form = document.getElementById('searchPokemon');
-const search = document.getElementById('searchInput');
-
-
-form.addEventListener('submit', async(e) => {
-    e.preventDefault();
-    const requestBody = {
-        name: search.value
-    }
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(requestBody)
-    }
-
-    const res = await fetch('/search', options);
-    const data = await res.json();
-
-    try {
-        setTimeout(() => {
-            window.location.pathname = `/pokemon/${data}`;
-        }, data)
+// function to search pokemon by its name
+export function searchPokemon(form, input) {
+    form.addEventListener('submit', async(e) => {
         
-    } catch (error) {
-        console.log(error);
-    }
+        try {
 
-})
+            e.preventDefault();
+            const requestBody = {
+                name: input.value
+            }
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(requestBody)
+            }
+
+            const res = await fetch('/search', options);
+            const data = await res.json();
+
+            setTimeout(() => {
+                window.location.pathname = `/pokemon/${data}`;
+            }, data);
+
+        } catch (error) {
+            console.error(error);
+        }
+    })
+}
