@@ -3,14 +3,17 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    // place-items: center center;
-    gap: .5rem;
-    padding: .5rem;
+    grid-template-areas: 
+        "img info"
+        "stats stats";
+    // gap: .5rem;
+    // padding: .5rem;
 
     background-color: green;
     &-img {
+        padding: .5rem;
+        grid-area: img;
         background-color: rgb(111, 133, 111);
-        
         
         img {
             height: 100%;
@@ -18,8 +21,10 @@
         }
         
     }
-    &-text {
-        background-color: rgb(111, 133, 111);
+    &-info {
+        padding: .5rem;
+        grid-area: info;
+        background-color: rgb(64, 120, 146);
         align-items: flex-start;
         justify-content: flex-start;
         
@@ -27,14 +32,53 @@
             text-transform: capitalize;
             font-family: 'Righteous', cursive;
         }
+
+        h3 {
+            margin: .7rem 0 0;
+        }
     }
     
     &-stats {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-area: stats;
+        position: relative;
+        background-color: rgb(25, 201, 142);
+
+        .base-stats {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-items: flex-end;
+            gap: .5rem;
+            padding: .5rem;
+        }
+
+        .stats-heading {
+            position: absolute;
+            top: .5rem;
+            left: .5rem;
+            font-size: 2.5rem;
+        }
 
         .row-item {
+            padding: .5rem;
+            height: 85%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 90% 10%;
+            // align-items: flex-end;
+            // justify-content: center;
             border: 1px solid;
+            // background-color: #00000080;
+
+            span {
+                background-color: red;
+                height: 100%;
+                font-size: 14px;
+                // white-space: nowrap;
+            }
+        }
+
+        .stat-item {
         }
     }
 }

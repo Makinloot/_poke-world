@@ -8,24 +8,50 @@ html
         <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
-        //- h1 #{name}
-        //- div
-        //-     img(src=img_src)
         main
             div.container
                 div.pokemon
+                    //- pokemon img side
                     .pokemon-img
                         img(src=img_src alt=name title=name)
-                    .pokemon-text.flex-column
+                    //- pokemon info html
+                    .pokemon-info.flex-column
                         h2 #{name}
+                        //- types
+                        .abilities
+                            h3 pokemon types:
+                            ul
+                                - const pokemonAbilities = abilities;
+                                each ability, i in abilities
+                                    - let index = i + 1;
+                                    li #{index}. #{ability}
+                        //- abilities
+                        .types 
+                            h3 pokemon abilities
+                            ul
+                                - const pokemonTypes = types;
+                                each pokeType, i in types
+                                    - let index = i + 1;
+                                    li #{index}. #{pokeType}
+                        //- other
+                        .other 
+                            h3 other 
+                            ul
+                                li height: #{height}
+                                li weight: #{weight}
+                                li base exp: #{base_experience}
                         p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae sint et corporis laudantium aut at, laboriosam non sit cumque nihil, est voluptatem ad. Vero, qui error? Perspiciatis quae qui ex, tempora, provident recusandae numquam aliquam in voluptatem quam beatae nemo, quod cumque laborum. Non accusamus corrupti mollitia quam minus quae repellat nobis sunt inventore eos exercitationem quidem odit earum maiores quod architecto aperiam, ullam tenetur ut qui in deleniti.
+                    //- pokemon stats html
                     .pokemon-stats
-                        - const pokemonStats = stats;
-                        - const statsNames = stats_names;
-                        //- each name in statsNames
-                        each stat, i in pokemonStats
-                            .row-item.flex-row= stat
-                                span= statsNames[i]
+                        .base-stats
+                            h2.stats-heading base stats
+                            - const pokemonStats = stats;
+                            - const statsNames = stats_names;
+                            each stat, i in pokemonStats
+                                .row-item
+                                    .stat-item.flex-row= stat
+                                    span.flex-row= statsNames[i]
+                        
                                 
                         //- - const statsArr = stats;
                         //- each stat in statsArr
