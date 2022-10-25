@@ -26,10 +26,12 @@ html
                         each pokemon, i in listArray 
                             li.test-li
                                 a(href=`/pokemon/${pokemon}`) #{i}: #{pokemon}
+                                img(src=images[i])
                 .pagination.flex-row
                     - let previous = Number(current_page) - 1;
                     - let next = Number(current_page) + 1;
-                    
+                    a(href=`/list?page=1`) first page
                     a(href=`/list?page=${previous}`) #{previous}
                     a(href=`/list?page=${next}`) #{next}
+                    a(href=`/list?page=${last_page}`) last page
     script(type="module" src="../../script.js")
