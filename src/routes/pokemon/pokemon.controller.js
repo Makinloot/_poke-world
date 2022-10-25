@@ -7,7 +7,7 @@ async function httpGetPokemon(req, res) {
         const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
         const api_res = await fetch(url);
         const api_data = await api_res.json();
-
+        
         res.render('html/assets/pokemon', {
             name: api_data.name,
             img_src: api_data.sprites.other['official-artwork'].front_default || api_data.sprites.front_default || 'https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?fit=845%2C503&ssl=1',
@@ -19,6 +19,7 @@ async function httpGetPokemon(req, res) {
             height: api_data.height,
             weight: api_data.weight,
         });
+
     } catch (error) {
         res.render('html/assets/404');
     }
