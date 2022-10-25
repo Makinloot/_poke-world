@@ -2,12 +2,12 @@
     min-height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 50% 40%;
     grid-template-areas: 
         "img info"
         "stats stats";
 
-    // background-color: green;
+    // pokemon img grid section
     &-img {
         padding: .5rem;
         grid-area: img;
@@ -18,6 +18,8 @@
         }
         
     }
+
+    // pokemon name, types, abilities section
     &-info {
         padding: .5rem;
         grid-area: info;
@@ -29,17 +31,15 @@
         }
         
         h2 {
+            @extend %heading-primary;
             position: absolute;
             top: .5rem;
             right: .5rem;
-            font-family: $ff-righteous;
-            text-transform: capitalize;
         }
         
         h3 {
+            @extend %heading-primary;
             margin: .7rem 0 0;
-            font-family: $ff-righteous;
-            text-transform: capitalize;
         }
 
         li {
@@ -54,10 +54,10 @@
         }
     }
     
+    // pokemon stats section
     &-stats {
         grid-area: stats;
         position: relative;
-        // background-color: rgb(25, 201, 142);
 
         .base-stats {
             height: 100%;
@@ -69,17 +69,16 @@
         }
 
         .stats-heading {
+            @extend %heading-primary;
             position: absolute;
-            top: 1rem;
+            top: 0rem;
             left: 1rem;
-            font-family: $ff-righteous;
             font-size: 2.5rem;
-            text-transform: capitalize;
         }
 
         .row-item {
             padding: .5rem;
-            height: 85%;
+            height: 90%;
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 90% 10%;
@@ -90,17 +89,6 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 align-items: flex-end;
-
-                .test {
-                    position: absolute;
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(60, 5px);
-                    background-color: red;
-                    gap: .5rem;
-                    width: 100%;
-                    height: 100%;
-                }
 
                 div {
                     background-color: $clr-light-blue;
@@ -114,22 +102,11 @@
             }
 
             span {
+                @extend %heading-primary;
                 height: 100%;
-                font-family: $ff-righteous;
                 font-size: 14px;
-                text-transform: capitalize;
                 border: 1px solid;
             }
         }
-
-        .stat-item {
-        }
-
-    }
-
-    &-form {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
     }
 }

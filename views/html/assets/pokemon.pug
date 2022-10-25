@@ -1,18 +1,28 @@
-//- extends ../global/layout
 doctype html 
 html 
     head 
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
+        header 
+            .container 
+                .header.flex-row
+                    form.search-form.flex-column#searchPokemon
+                        input#searchInput(type="text" placeholder="Search here..." autocomplete="off" required)
+                    ul.flex-row
+                        a(href="/").flex-row
+                            img(src="../../images/home-icon.png")
+                            span home
+                        a(href="/pokemons").flex-row
+                            img(src="../../images/play-icon.png")
+                            span pokemons
         main
-            div.container
-                div.pokemon
+            .container
+                .pokemon
                     //- pokemon img side
-                    .pokemon-img
+                    .pokemon-img.flex-row
                         img(src=img_src alt=name title=name)
                     //- pokemon info html
                     .pokemon-info.flex-column
@@ -31,7 +41,6 @@ html
                                 - const pokemonAbilities = abilities;
                                 each ability in abilities
                                     li= ability
-
                         //- other
                         .other 
                             h3 other 
@@ -42,6 +51,7 @@ html
                                 li height: #{baseHeight}
                                 li weight: #{baseWeight}
                                 li base exp: #{baseExp}
+                        //- text
                         .text
                             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae sint et corporis laudantium aut at, laboriosam non sit cumque nihil, est voluptatem ad. Vero, qui error? Perspiciatis quae qui ex, tempora, provident recusandae numquam aliquam in voluptatem quam beatae nemo, quod cumque laborum. Non accusamus corrupti mollitia quam minus quae repellat nobis sunt inventore eos exercitationem quidem odit earum maiores quod architecto aperiam, ullam tenetur ut qui in deleniti.
                     //- pokemon stats html
@@ -55,10 +65,9 @@ html
                                     .stat-item
                                     span.flex-row= statsNames[i]
                         
-                form.pokemon-form.flex-column#searchPokemon
-                    label(for="searchInput") Search here
-                    input#searchInput(type="text" required)
-                    button submit                
-                    a(href="http://localhost:3000") main page
+                //- form.pokemon-form.flex-column#searchPokemon
+                //-     label(for="searchInput") Search here
+                //-     input#searchInput(type="text" required)
+                //-     button submit                
         script(type="module" src="../../script.js")
         script(src="../../js/stats.js")
