@@ -6,6 +6,7 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
+        //- header
         header 
             .container 
                 .header.flex-row
@@ -18,15 +19,18 @@ html
                         a(href="/list?page=1").flex-row
                             img(src="../../images/play-icon.png")
                             span pokemons
+        //- main
         main 
             .container 
+                //- pokemon list
                 .list 
-                    ul 
+                    ul.list-ul.flex-column
                         - const listArray = list;
                         each pokemon, i in listArray 
-                            li.test-li
-                                a(href=`/pokemon/${pokemon}`) #{i}: #{pokemon}
-                                img(src=images[i])
+                            li.list-li
+                                a(href=`/pokemon/${pokemon}`).flex-column 
+                                    img(src=images[i] alt=pokemon)
+                                    span #{pokemon}
                 .pagination.flex-row
                     - let previous = Number(current_page) - 1;
                     - let next = Number(current_page) + 1;

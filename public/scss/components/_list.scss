@@ -2,6 +2,27 @@
     gap: 2rem;
 }
 
+.list {
+
+    &-ul {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    &-li {
+        // background-color: red;
+
+        a {
+            align-items: flex-start;
+        }
+        
+        img {
+            width: 100px;
+            object-fit: cover;
+        }
+    }
+}
+
 .test-li {
     margin: 2rem 0;
 
