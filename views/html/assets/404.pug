@@ -1,4 +1,3 @@
-//- extends ../global/layout
 doctype html 
 html 
     head 
@@ -7,17 +6,22 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
-        a(href="http://localhost:3000") main page
-
+        header 
+            .container 
+                .header.flex-row
+                    form.search-form.flex-column#searchPokemon
+                        input#searchInput(type="text" placeholder="Search here..." autocomplete="off" required)
+                    ul.flex-row
+                        a(href="/").flex-row
+                            img(src="../../images/home-icon.png")
+                            span home
+                        a(href="/list?page=1").flex-row
+                            img(src="../../images/play-icon.png")
+                            span pokemons
         main
             div.container
                 div.error.flex-column
                     div.error-img 
                         img(src="../../images/404.png" alt="error 404")
                     p.error-text Oops, this page does not exist.
-                    form.error-form.flex-column#searchPokemon
-                        label(for="searchInput") Search here
-                        input#searchInput(type="text" required)
-                        button submit
-                    a.home-link(href="../../index.html") main page
         script(type="module" src="../../script.js")

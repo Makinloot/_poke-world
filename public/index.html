@@ -7,15 +7,21 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
   </head>
   <body> 
-    <div class="container">
-      <div class="home flex-row">
-        <form class="home-form flex-column" id="searchPokemon">
-          <label for="searchInput">Search here</label>
-          <input id="searchInput" type="text" required="required"/>
-          <button>submit</button>
-        </form>
+    <header> 
+      <div class="container"> 
+        <div class="header flex-row">
+          <form class="search-form flex-column" id="searchPokemon">
+            <input id="searchInput" type="text" placeholder="Search here..." autocomplete="off" required="required"/>
+          </form>
+          <ul class="flex-row"><a class="flex-row" href="/"><img src="../../images/home-icon.png"/><span>home</span></a><a class="flex-row" href="/list?page=1"><img src="../../images/play-icon.png"/><span>pokemons</span></a></ul>
+        </div>
       </div>
-    </div>
+    </header>
+    <main>
+      <div class="container"> 
+        <div class="home"></div>
+      </div>
+    </main>
     <script type="module" src="./script.js"></script>
   </body>
 </html>

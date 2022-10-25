@@ -3,7 +3,6 @@ export function searchPokemon(form, input) {
     form.addEventListener('submit', async(e) => {
         
         try {
-
             e.preventDefault();
             const requestBody = {
                 name: input.value
@@ -19,6 +18,7 @@ export function searchPokemon(form, input) {
             const res = await fetch('/search', options);
             const data = await res.json();
 
+            // await data before changing location
             setTimeout(() => {
                 window.location.pathname = `/pokemon/${data}`;
             }, data);

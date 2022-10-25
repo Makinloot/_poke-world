@@ -1,13 +1,11 @@
-//- extends html/global/layout
 doctype html 
 html 
     head 
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet" type="text/css" href="./css/style.css")
+        link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
-        //- header
         header 
             .container 
                 .header.flex-row
@@ -20,8 +18,18 @@ html
                         a(href="/list?page=1").flex-row
                             img(src="../../images/play-icon.png")
                             span pokemons
-        //- main
-        main
+        main 
             .container 
-                .home
-        script(type="module" src="./script.js")
+                .list 
+                    ul 
+                        - const listArray = list;
+                        each pokemon, i in listArray 
+                            li.test-li
+                                a(href=`/pokemon/${pokemon}`) #{i}: #{pokemon}
+                .pagination.flex-row
+                    - let previous = Number(current_page) - 1;
+                    - let next = Number(current_page) + 1;
+                    
+                    a(href=`/list?page=${previous}`) #{previous}
+                    a(href=`/list?page=${next}`) #{next}
+    script(type="module" src="../../script.js")

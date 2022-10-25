@@ -1,11 +1,11 @@
 import { results } from "../../models/home.model.js";
 
-// return index.html when user is at homepage ('/')
+// return index.html when user is at homepage ('/') ( GET REQUEST )
 function httpHomePage(req, res) {
     res.render('index');
 }
 
-// return pokemon name to user if it exists
+// return pokemon name to user if it exists ( POST REQUEST )
 function httpSearchPokemon(req, res) {
     const name = req.body.name.toLowerCase();
 

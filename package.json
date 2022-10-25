@@ -2,14 +2,15 @@
   "type": "module",
   "name": "poke-world",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pokemon app with PokeApi data",
   "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "startDev": "nodemon src/index.js",
     "renderPug": "pug -w ./views -o ./public -P"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tornike Epitashvili",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
