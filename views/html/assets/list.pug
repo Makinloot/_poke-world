@@ -24,18 +24,20 @@ html
             .container 
                 //- pokemon list
                 .list 
-                    ul.list-ul.flex-column
+                    ul.list-ul
                         - const listArray = list;
                         each pokemon, i in listArray 
-                            li.list-li
+                            li.list-li.flex-row
                                 a(href=`/pokemon/${pokemon}`).flex-column 
-                                    img(src=images[i] alt=pokemon)
                                     span #{pokemon}
+                                    img(src=images[i] alt=pokemon)
+                //- pagination
                 .pagination.flex-row
                     - let previous = Number(current_page) - 1;
                     - let next = Number(current_page) + 1;
                     a(href=`/list?page=1`) first page
                     a(href=`/list?page=${previous}`) #{previous}
+                    a(href=`/list?page=${current_page}`).active #{current_page} 
                     a(href=`/list?page=${next}`) #{next}
                     a(href=`/list?page=${last_page}`) last page
     script(type="module" src="../../script.js")

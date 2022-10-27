@@ -1,17 +1,16 @@
 // import fetch from "node-fetch";
+// import { imgArr } from "../routes/list/list.controller.js";
 
-// // fetch every pokemon
-// const url = `https://pokeapi.co/api/v2/pokemon?limit=10&offset=0`;
-// const res = await fetch(url);
-// const data = await res.json();
-
-// // return only NAMES from data
-// const listResults = data.results.map(item => {
-//     return item.name;
-// });
-
-// // console.log(results);
+// async function pushImageSrcInArray(data) {
+//     for(let i = 0; i < data.length; i++) {
+//         const name_url = `https://pokeapi.co/api/v2/pokemon/${data[i]}`;
+//         const name_res = await fetch(name_url);
+//         const name_data = await name_res.json();
+//         const imagesSrc = name_data.sprites.other['official-artwork'].front_default || name_data.sprites.front_default || 'https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?fit=845%2C503&ssl=1';
+//         imgArr.push(imagesSrc);
+//     }
+// }
 
 // export {
-//     listResults,
+//     pushImageSrcInArray,
 // }

@@ -1,13 +1,14 @@
 // import { listResults } from "../../models/list.model.js";
 import fetch from "node-fetch";
+// import { pushImageSrcInArray } from "../../models/list.model.js";
 
 async function httpGetList(req, res) {
     
     const page = req.query.page;
     const limit = 4;
     const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-    
+    // const endIndex = page * limit;
+
     // fetch pokemons according to query.page
     const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${startIndex}`;
     const list_res = await fetch(url);
