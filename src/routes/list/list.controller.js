@@ -1,6 +1,4 @@
-// import { listResults } from "../../models/list.model.js";
 import fetch from "node-fetch";
-// import { pushImageSrcInArray } from "../../models/list.model.js";
 
 async function httpGetList(req, res) {
     

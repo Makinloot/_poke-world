@@ -6,6 +6,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 1rem;
+        user-select: none;
     }
 
     &-li {
@@ -16,6 +17,9 @@
         
         &:hover {
             scale: .9;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.0);
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.0);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.0);
         }
         
         a {
@@ -37,6 +41,21 @@
 }
 
 .pagination {
-    gap: 2rem;
-    background-color: red;
+    padding: .5rem;
+    gap: 1rem;
+
+    a {
+        padding: .5rem;
+        font-family: $ff-acumin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a.active {
+        font-weight: 900;
+        user-select: none;
+        pointer-events: none;
+        text-decoration: underline;
+    }
 }
