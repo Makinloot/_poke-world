@@ -44,11 +44,11 @@ html
                     //- page number links
                     a(href=`/list?page=${beforePrev}`).pag-link #{beforePrev}
                     a(href=`/list?page=${previous}`).pag-link #{previous} 
-                    a(href=`/list?page=${current_page}`).pag-link.active #{current_page} 
-                    a(href=`/list?page=${next}`) #{next} 
-                    a(href=`/list?page=${afterNext}`).pag-link #{afterNext} 
+                    span.active #{current_page} 
+                    a(href=`/list?page=${next}`)#next #{next} 
+                    a(href=`/list?page=${afterNext}`)#after-next.pag-link #{afterNext} 
                     //- img and last page links
-                    a(href=`/list?page=${next}`).pag-link
+                    a(href=`/list?page=${next}`)#next-icon.pag-link
                         img(src="../../images/svg/next-page.svg" alt="next page")
                     a(href=`/list?page=${last_page}`).pag-link#last-page Last page
     script(type="module" src="../../script.js")

@@ -44,7 +44,8 @@
     padding: .5rem;
     gap: 1rem;
 
-    a {
+    a,
+    .span {
         padding: .5rem;
         font-family: $ff-acumin;
         display: flex;
@@ -52,7 +53,7 @@
         justify-content: center;
     }
 
-    a.active {
+    span.active {
         font-weight: 900;
         user-select: none;
         pointer-events: none;

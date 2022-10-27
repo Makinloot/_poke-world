@@ -13,17 +13,21 @@
           <form class="search-form flex-column" id="searchPokemon">
             <input id="searchInput" type="text" placeholder="Search here..." autocomplete="off" required="required"/>
           </form>
-          <ul class="flex-row"><a class="flex-row" href="/"><img src="../../images/home-icon.png"/><span>home</span></a><a class="flex-row" href="/list"><img src="../../images/play-icon.png"/><span>pokemons</span></a></ul>
+          <ul class="flex-row"><a class="flex-row" href="/"><img src="../../images/home-icon.png"/><span>home</span></a><a class="flex-row" href="/list?page=1"><img src="../../images/play-icon.png"/><span>pokemons</span></a></ul>
         </div>
       </div>
     </header>
     <main> 
       <div class="container"> 
         <div class="list"> 
-          <ul> 
+          <ul class="list-ul">
           </ul>
+        </div>
+        <div class="pagination flex-row"><a class="pag-link" href="/list?page=1" id="first-page">First page</a><a class="pag-link" href="/list?page=NaN"><img src="../../images/svg/prev-page.svg" alt="previous page"/></a><a class="pag-link" href="/list?page=NaN">NaN</a><a class="pag-link" href="/list?page=NaN">NaN </a><a class="pag-link active" href="/list?page=undefined"> </a><a href="/list?page=NaN">NaN </a><a class="pag-link" href="/list?page=NaN">NaN </a><a class="pag-link" href="/list?page=NaN"><img src="../../images/svg/next-page.svg" alt="next page"/></a><a class="pag-link" href="/list?page=undefined" id="last-page">Last page</a>
         </div>
       </div>
     </main>
   </body>
+  <script type="module" src="../../script.js"></script>
+  <script src="../../js/pagination.js"></script>
 </html>
