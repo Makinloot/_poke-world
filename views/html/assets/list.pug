@@ -4,6 +4,12 @@ html
         meta(charset="utf-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(property="og:url" content="https://all-about-pokemons.herokuapp.com")
+        meta(property="og:title" content="PokemonFinder")
+        meta(property="og:description" content="Everything about pokemons!")
+        meta(property="og:image" content="../../images/social-img.jpg")
+        title PokemonFinder | Page #{current_page}
+        link(rel="shortcut icon", href="../../favicon.png", type="image/x-icon")
         link(rel="stylesheet" type="text/css" href="../../css/style.css")
     body 
         //- header
@@ -19,7 +25,7 @@ html
                         a(href="/list?page=1").flex-row
                             img(src="../../images/play-icon.png")
                             span pokemons
-        //- main
+        main
         main 
             .container 
                 //- pokemon list

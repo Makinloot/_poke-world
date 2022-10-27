@@ -45,12 +45,19 @@
     gap: 1rem;
 
     a,
-    .span {
-        padding: .5rem;
+    span {
+        padding: .5rem 1rem;
         font-family: $ff-acumin;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .3s;
+        user-select: none;
+
+        &:hover {
+            scale: .9;
+            background-color: $clr-light-blue;
+        }
     }
 
     span.active {

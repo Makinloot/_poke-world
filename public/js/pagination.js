@@ -12,7 +12,7 @@ paginationLinks.forEach((item, i) => {
 });
 
 const pageEndPoint = window.location.href.split('?')[1];
-const pagButtons = [
+const pagEndButtons = [
     document.getElementById('next'),
     document.getElementById('after-next'),
     document.getElementById('next-icon'),
@@ -21,5 +21,7 @@ const pagButtons = [
 // hide last elements in pagination if user is on last page
 if(pageEndPoint === `page=${pagesLength}`) {
     console.log('red');
-    pagButtons.forEach(item => item.classList.add('hidden'));
+    pagEndButtons.forEach(item => item.classList.add('hidden'));
+} else if(pageEndPoint === `page=1`) {
+    document.getElementById('first-page').classList.add('hidden');
 }
