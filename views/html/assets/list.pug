@@ -38,17 +38,18 @@ html
                     - let beforePrev = previous - 1;
                     - let afterNext = next + 1;
                     //- img and first page links
-                    a(href=`/list?page=1`) First page
-                    a(href=`/list?page=${previous}`)
+                    a(href=`/list?page=1`).pag-link#first-page First page
+                    a(href=`/list?page=${previous}`).pag-link
                         img(src="../../images/svg/prev-page.svg" alt="previous page")
                     //- page number links
-                    a(href=`/list?page=${beforePrev}`) #{beforePrev}
-                    a(href=`/list?page=${previous}`) #{previous} 
-                    a(href=`/list?page=${current_page}`).active #{current_page} 
+                    a(href=`/list?page=${beforePrev}`).pag-link #{beforePrev}
+                    a(href=`/list?page=${previous}`).pag-link #{previous} 
+                    a(href=`/list?page=${current_page}`).pag-link.active #{current_page} 
                     a(href=`/list?page=${next}`) #{next} 
-                    a(href=`/list?page=${afterNext}`) #{afterNext} 
+                    a(href=`/list?page=${afterNext}`).pag-link #{afterNext} 
                     //- img and last page links
-                    a(href=`/list?page=${next}`)
+                    a(href=`/list?page=${next}`).pag-link
                         img(src="../../images/svg/next-page.svg" alt="next page")
-                    a(href=`/list?page=${last_page}`) Last page
+                    a(href=`/list?page=${last_page}`).pag-link#last-page Last page
     script(type="module" src="../../script.js")
+    script(src="../../js/pagination.js")
