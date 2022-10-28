@@ -47,7 +47,7 @@ html
                     - let afterNext = next + 1;
                     //- img and first page links
                     a(href=`/list?page=1`).pag-link#first-page First page
-                    a(href=`/list?page=${previous}`).pag-link
+                    a(href=`/list?page=${previous}`)#prev-icon.pag-link
                         img(src="../../images/svg/prev-page.svg" alt="previous page")
                     //- page number links
                     a(href=`/list?page=${beforePrev}`).pag-link #{beforePrev}
