@@ -28,15 +28,17 @@ html
                             span pokemons
         main
             .container
+                h2#pokemon-name #{name}
                 .pokemon
                     //- pokemon img side
                     .pokemon-img.flex-row
                         img(src=img_src alt=name title=name)
                     //- pokemon info html
-                    .pokemon-info.flex-column
+                    //- .pokemon-info.flex-column
+                    .pokemon-info
                         //- types
                         .abilities
-                            h2#pokemon-name #{name}
+                            //- h2#pokemon-name #{name}
                             h3 pokemon types
                             ul
                                 - const pokemonTypes = types;
@@ -49,24 +51,26 @@ html
                                 - const pokemonAbilities = abilities;
                                 each ability in abilities
                                     li= ability
-                        //- other
-                        .other 
-                            h3 other 
-                            ul
-                                - const baseHeight = height || 'no data';
-                                - const baseWeight = weight || 'no data';
-                                - const baseExp = base_experience || 'no data';
-                                li height: #{baseHeight}
-                                li weight: #{baseWeight}
-                                li base exp: #{baseExp}
                         //- text
                         .species 
                             h3 species
                             ul 
-                                - const speciesData = [base_happiness, capture_rate, color];
+                                - const speciesData = [base_happiness, capture_rate, color, flavor_text];
                                 li base happiness: #{speciesData[0]}
                                 li capture rate: #{speciesData[1]}
                                 li color: #{speciesData[2]}
+                                //- li.text-li #{flavor_text}
+                        //- other
+                        .other 
+                            h3 other 
+                            ul
+                                - const otherData = [height, weight, base_experience || 'no data'];
+                                li height: #{otherData[0]}
+                                li weight: #{otherData[1]}
+                                li base exp: #{otherData[2]}
+                        .text-li 
+                            each text in flavor_text 
+                                span= text
                     //- pokemon stats html
                     .pokemon-stats
                         .base-stats

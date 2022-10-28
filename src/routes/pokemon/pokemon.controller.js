@@ -13,7 +13,10 @@ async function httpGetPokemon(req, res) {
         const speciesURL = `https://pokeapi.co/api/v2/pokemon-species/${name}/`;
         const species_res = await fetch(speciesURL);
         const species_data = await species_res.json();
-        
+
+        // filter flavor_text_entries array and return only english text
+        const flavorTexts = species_data.flavor_text_entries.filter(item => item.language.name === 'en');
+
         res.render('html/assets/pokemon', {
             name: api_data.name,
             img_src: api_data.sprites.other['official-artwork'].front_default || api_data.sprites.front_default || 'https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?fit=845%2C503&ssl=1',
@@ -27,6 +30,13 @@ async function httpGetPokemon(req, res) {
             base_happiness: species_data.base_happiness,
             capture_rate: species_data.capture_rate,
             color: species_data.color.name,
+            flavor_text: [
+                // get flavor texts excluding 0 index
+                flavorTexts[1].flavor_text,
+                flavorTexts[2].flavor_text,
+                flavorTexts[3].flavor_text,
+                flavorTexts[4].flavor_text,
+            ]
         });
 
     } catch (error) {
