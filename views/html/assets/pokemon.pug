@@ -34,11 +34,9 @@ html
                     .pokemon-img.flex-row
                         img(src=img_src alt=name title=name)
                     //- pokemon info html
-                    //- .pokemon-info.flex-column
                     .pokemon-info
                         //- types
                         .abilities
-                            //- h2#pokemon-name #{name}
                             h3 pokemon types
                             ul
                                 - const pokemonTypes = types;
@@ -79,8 +77,8 @@ html
                             - const statsNames = stats_names;
                             each stat, i in pokemonStats
                                 .row-item
-                                    .stat-item
                                     span.flex-row= statsNames[i]
+                                    .stat-item
                         
                 //- form.pokemon-form.flex-column#searchPokemon
                 //-     label(for="searchInput") Search here

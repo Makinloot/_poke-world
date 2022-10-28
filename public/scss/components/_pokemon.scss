@@ -107,7 +107,7 @@ h2#pokemon-name {
       height: 90%;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 90% 10%;
+      grid-template-rows: 10% 90%;
       gap: 0.5rem;
 
       .stat-item {
