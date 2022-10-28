@@ -8,8 +8,8 @@ To run this app locally just install few dependendencies written in package.json
 
 start app scripts:
 
-npm run start - runs app locally.
+  npm run start - runs app locally.
 
-npm run startDev - if you install nodemon in dev dependencies runs and watches any changes on app localy.
+  npm run startDev - if you install nodemon in dev dependencies runs and watches any changes on app localy.
 
-npm run renderPug - renders pug and watches any changes in views directory.
+  npm run renderPug - renders pug and watches any changes in views directory.
