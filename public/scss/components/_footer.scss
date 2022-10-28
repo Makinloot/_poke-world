@@ -1,0 +1,13 @@
+.footer {
+    margin-bottom: 2rem;
+
+    h6 {
+        font-size: 1rem;
+    }
+    
+    .created-by {
+        font-family: $ff-righteous;
+        gap: .1rem;
+        text-transform: capitalize;
+    }
+}

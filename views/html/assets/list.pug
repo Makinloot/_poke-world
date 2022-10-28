@@ -27,7 +27,7 @@ html
                         a(href="/list?page=1").flex-row
                             img(src="../../images/play-icon.png")
                             span pokemons
-        main
+        //- main
         main 
             .container 
                 //- pokemon list
@@ -59,5 +59,11 @@ html
                     a(href=`/list?page=${next}`)#next-icon.pag-link
                         img(src="../../images/svg/next-page.svg" alt="next page")
                     a(href=`/list?page=${last_page}`).pag-link#last-page Last page
+        footer 
+            .container 
+                .footer 
+                    .created-by.flex-row
+                        span &copy;
+                        h6 seed   
     script(type="module" src="../../script.js")
     script(src="../../js/pagination.js")
