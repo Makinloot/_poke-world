@@ -6,7 +6,7 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         meta(property="og:url" content="https://all-about-pokemons.herokuapp.com")
         meta(property="og:title" content="PokemonFinder")
-        meta(property="og:description" content="Everything about pokemons!")
+        meta(property="og:description" content="Search your favourite pokemons!")
         meta(property="og:image" content="../../images/social.jpg")
         title PokemonFinder | #{name}
         link(rel="shortcut icon", href="../../favicon.png", type="image/x-icon")
@@ -17,6 +17,8 @@ html
                 .header.flex-row
                     form.search-form.flex-column#searchPokemon
                         input#searchInput(type="text" placeholder="Search here..." autocomplete="off" required)
+                        button.flex-row 
+                            img(src="../../images/svg/search.svg" alt="search-icon")
                     ul.flex-row
                         a(href="/").flex-row
                             img(src="../../images/home-icon.png")
@@ -58,8 +60,13 @@ html
                                 li weight: #{baseWeight}
                                 li base exp: #{baseExp}
                         //- text
-                        .text
-                            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae sint et corporis laudantium aut at, laboriosam non sit cumque nihil, est voluptatem ad. Vero, qui error? Perspiciatis quae qui ex, tempora, provident recusandae numquam aliquam in voluptatem quam beatae nemo, quod cumque laborum. Non accusamus corrupti mollitia quam minus quae repellat nobis sunt inventore eos exercitationem quidem odit earum maiores quod architecto aperiam, ullam tenetur ut qui in deleniti.
+                        .species 
+                            h3 species
+                            ul 
+                                - const speciesData = [base_happiness, capture_rate, color];
+                                li base happiness: #{speciesData[0]}
+                                li capture rate: #{speciesData[1]}
+                                li color: #{speciesData[2]}
                     //- pokemon stats html
                     .pokemon-stats
                         .base-stats

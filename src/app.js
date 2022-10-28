@@ -22,6 +22,7 @@ app.set('view engine', 'pug');
 
 // set routes
 app.use('/', homeRouter);
+app.use('/random', homeRouter);
 app.use('/pokemon', pokemonRouter);
 app.use('/list', listRouter);
 

@@ -6,7 +6,7 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         meta(property="og:url" content="https://all-about-pokemons.herokuapp.com")
         meta(property="og:title" content="PokemonFinder")
-        meta(property="og:description" content="Everything about pokemons!")
+        meta(property="og:description" content="Error 404")
         meta(property="og:image" content="../../images/social.jpg")
         title PokemonFinder | Error 404
         link(rel="shortcut icon", href="../../favicon.png", type="image/x-icon")
@@ -17,6 +17,8 @@ html
                 .header.flex-row
                     form.search-form.flex-column#searchPokemon
                         input#searchInput(type="text" placeholder="Search here..." autocomplete="off" required)
+                        button.flex-row 
+                            img(src="../../images/svg/search.svg" alt="search-icon")
                     ul.flex-row
                         a(href="/").flex-row
                             img(src="../../images/home-icon.png")

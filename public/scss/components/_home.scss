@@ -1,8 +1,36 @@
-// .home {
-//     min-height: 100vh;
+.home {
+    min-height: 90vh;
 
-//     &-form {
-//         align-items: flex-start;
-//         gap: .2rem;
-//     }
-// }
+    h1 {
+        padding: .75rem;
+        font-family: $ff-righteous;
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        color: $clr-night-blue;
+
+        span {
+            color: $clr-purple;
+        }
+    }
+
+    &-text {
+        gap: 2rem;
+
+        h2 {
+            @extend %heading-primary;
+            font-size: 5rem;
+        }
+
+        p {
+            font-family: $ff-acumin;
+            letter-spacing: 1.15px;
+            font-size: 1.5rem;
+            color: $clr-night-blue
+        }
+
+        a {
+            @extend %btn-primary;
+            display: block;
+        }
+    }
+}

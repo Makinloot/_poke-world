@@ -37,3 +37,20 @@
     text-transform: capitalize;
     color: $clr-purple;
 }
+
+// buttons
+%btn-primary {
+    border: 3px solid $clr-night-blue;
+    padding: 1rem 2.5rem;
+    font-family: $ff-righteous;
+    text-transform: capitalize;
+    color: $clr-purple;
+    border-radius: .5rem;
+    transition: .3s;
+
+    &:hover {
+        background-color: $clr-night-blue;
+        scale: .9;
+        color: $clr-camel;
+    }
+}

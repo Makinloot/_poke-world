@@ -16,7 +16,20 @@ function httpSearchPokemon(req, res) {
     }
 }
 
+// return random pokemon name
+function httpRandomPokemon(req, res) {
+
+   const min = Math.ceil(1);
+   const max = Math.floor(results.length);
+   const randomNum = Math.floor(Math.random() * (max - min + 1)) + 1;
+   const randomPokemon = results[randomNum];
+
+   res.json(randomPokemon);
+    // res.json(req.body)
+}
+
 export {
     httpHomePage,
     httpSearchPokemon,
+    httpRandomPokemon,
 }

@@ -3,10 +3,16 @@ import fetch from "node-fetch";
 // call pokemon api by pokemon name
 async function httpGetPokemon(req, res) {
     try {
+        // fetch pokemon general data
         const name = req.params.pokemonName;
         const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
         const api_res = await fetch(url);
         const api_data = await api_res.json();
+
+        // fetch pokemon species data
+        const speciesURL = `https://pokeapi.co/api/v2/pokemon-species/${name}/`;
+        const species_res = await fetch(speciesURL);
+        const species_data = await species_res.json();
         
         res.render('html/assets/pokemon', {
             name: api_data.name,
@@ -18,6 +24,9 @@ async function httpGetPokemon(req, res) {
             base_experience: api_data.base_experience,
             height: api_data.height,
             weight: api_data.weight,
+            base_happiness: species_data.base_happiness,
+            capture_rate: species_data.capture_rate,
+            color: species_data.color.name,
         });
 
     } catch (error) {

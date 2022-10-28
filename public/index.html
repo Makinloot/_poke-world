@@ -8,7 +8,7 @@
     <meta name="author" content="Tornike Epitashvili"/>
     <meta property="og:url" content="https://all-about-pokemons.herokuapp.com"/>
     <meta property="og:title" content="PokemonFinder"/>
-    <meta property="og:description" content="Everything about pokemons!"/>
+    <meta property="og:description" content="Search your favourite pokemons!"/>
     <meta property="og:image" content="./images/social.jpg"/>
     <title>PokemonFinder | Home</title>
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon"/>
@@ -20,6 +20,7 @@
         <div class="header flex-row">
           <form class="search-form flex-column" id="searchPokemon">
             <input id="searchInput" type="text" placeholder="Search here..." autocomplete="off" required="required"/>
+            <button class="flex-row"> <img src="./images/svg/search.svg" alt="search-icon"/></button>
           </form>
           <ul class="flex-row"><a class="flex-row" href="/"><img src="../../images/home-icon.png"/><span>home</span></a><a class="flex-row" href="/list?page=1"><img src="../../images/play-icon.png"/><span>pokemons</span></a></ul>
         </div>
@@ -27,9 +28,16 @@
     </header>
     <main>
       <div class="container"> 
-        <div class="home"></div>
+        <div class="home flex-column">
+          <div class="home-text flex-column">
+            <h1>pokemon <span>finder</span></h1>
+            <h2>pokemons for everyone.</h2>
+            <p>Over 900 pokemons</p><a href="#" id="random-btn">get random pokemon </a>
+          </div>
+        </div>
       </div>
     </main>
     <script type="module" src="./script.js"></script>
+    <script src="./js/random.js"> </script>
   </body>
 </html>
