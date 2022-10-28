@@ -22,6 +22,16 @@
   // header styles
   .header {
     flex-wrap: wrap;
+
+    .search-form {
+
+        button {
+
+            img {
+                max-height: 1rem;
+            }
+        }
+    }
   }
 
   // home page styles
