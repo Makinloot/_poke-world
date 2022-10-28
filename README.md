@@ -1,6 +1,6 @@
 # PokemonFinder
 
-PokemonFinder, this app lets you search your favourite pokemon and fetch it's data.
+This app lets you search your favourite pokemon and fetch it's data.
 
 Currently over 900 pokemon avaliable.
 
