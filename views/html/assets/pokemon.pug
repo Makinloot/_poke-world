@@ -70,15 +70,8 @@ html
                             each text in flavor_text 
                                 span= text
                     //- pokemon stats html
-                    .pokemon-stats
-                        .base-stats
-                            h2.stats-heading base stats
-                            - const pokemonStats = stats;
-                            - const statsNames = stats_names;
-                            each stat, i in pokemonStats
-                                .row-item
-                                    span.flex-row= statsNames[i]
-                                    .stat-item
+                    canvas(height="90")#stats-chart.pokemon-stats
+
             footer 
                 .container 
                     .footer 
@@ -86,4 +79,4 @@ html
                             span &copy;
                             h6 seed            
         script(type="module" src="../../script.js")
-        script(src="../../js/stats.js")
+        script(type="module" src="../../js/stats.js")
