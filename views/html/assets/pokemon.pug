@@ -57,7 +57,6 @@ html
                                 li base happiness: #{speciesData[0]}
                                 li capture rate: #{speciesData[1]}
                                 li color: #{speciesData[2]}
-                                //- li.text-li #{flavor_text}
                         //- other
                         .other 
                             h3 other 
@@ -68,9 +67,9 @@ html
                                 li base exp: #{otherData[2]}
                         .text-li 
                             each text in flavor_text 
-                                span= text
+                                p= text
                     //- pokemon stats html
-                    canvas(height="90")#stats-chart.pokemon-stats
+                    canvas(height="90" style="margin: 2rem 0")#stats-chart.pokemon-stats.padding-2
 
             footer 
                 .container 

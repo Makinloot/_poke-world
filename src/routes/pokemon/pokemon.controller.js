@@ -33,9 +33,7 @@ async function httpGetPokemon(req, res) {
             flavor_text: [
                 // get flavor texts excluding 0 index
                 flavorTexts[1].flavor_text,
-                flavorTexts[2].flavor_text,
-                flavorTexts[7].flavor_text,
-                flavorTexts[8].flavor_text,
+                flavorTexts[3].flavor_text,
             ]
         });
 

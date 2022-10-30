@@ -17,6 +17,17 @@
     grid-template-rows: 1fr;
   }
 
+  // pokemon page styles
+  .pokemon {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 33%);
+    grid-template-areas: 
+      "img"
+      "info"
+      "stats"
+    ;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -65,6 +76,29 @@
     #prev-icon {
       display: none;
     }
+  }
+
+  // pokemon page styles
+  .pokemon {
+    // grid-template-columns: 1fr;
+    // grid-template-rows: repeat(3, 33%);
+    // grid-template-areas: 
+      // "img"
+      // "info"
+      // "stats"
+    // ;
+
+    &-info {
+      span {
+        background-color: red;
+
+      }
+    }
+  
+    &-stats {
+      display: none;
+    }
+
   }
 
 }

@@ -8,11 +8,13 @@ window.onload = async() => {
     const data = await res.json();
     
     const statsData = data.stats.map(item => item.base_stat);
-    const labelsData = data.stats.map(item => item.stat.name);
+    const labelsData = data.stats.map(item => item.stat.name.toUpperCase());
+    
     initChart(statsData, labelsData);
 }
 
 function initChart(stats, labels) {
+
     const ctx = document.getElementById('stats-chart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -45,23 +47,4 @@ function initChart(stats, labels) {
             }
         }
     });
-
 }
-
-
-// // display stats height according to stats amount
-// function showStats(data) {
-
-//     const statsWrappers = document.querySelectorAll('.stat-item');
-//     data.stats.forEach((item, i) => {
-//         const statValue = item.base_stat;
-//         let html = `<div class="stat-item-inner flex-row">${statValue}</div>`;
-//         statsWrappers[i].innerHTML += html;
-//     });
-
-//     const statInner = document.querySelectorAll('.stat-item-inner');
-//     statInner.forEach((item, i) => {
-//         let blockAmount = item.innerText / 1.5;
-//         statInner[i].style.height = `${blockAmount}%`;
-//     });
-// }
