@@ -70,7 +70,31 @@ html
                                 p= text
                     //- pokemon stats html
                     canvas(height="90" style="margin: 2rem 0")#stats-chart.pokemon-stats.padding-2
+                    //- pokemon change buttons
+                    - const nextPage = Number(id + 1);
+                    - const prevPage = Number(id - 1);
 
+                    if id === 1 
+                        .next-pokemon
+                            a(href=`/pokemon/${nextPage}`)
+                                img(src="../../images/change-page.png")
+                        .prev-pokemon.hidden  
+                            a(href=`/pokemon/${prevPage}`)
+                                img(src="../../images/change-page.png")
+                    else if id === 288
+                        .next-pokemon.hidden 
+                            a(href=`/pokemon/${nextPage}`)
+                                img(src="../../images/change-page.png")
+                        .prev-pokemon
+                            a(href=`/pokemon/${prevPage}`)
+                                img(src="../../images/change-page.png")
+                    else 
+                        .next-pokemon 
+                            a(href=`/pokemon/${nextPage}`)
+                                img(src="../../images/change-page.png")
+                        .prev-pokemon
+                            a(href=`/pokemon/${prevPage}`)
+                                img(src="../../images/change-page.png")
             footer 
                 .container 
                     .footer 

@@ -86,3 +86,34 @@ h2#pokemon-name {
     grid-area: stats;
   }
 }
+
+.next-pokemon,
+.prev-pokemon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.hidden {
+    display: none;
+  }
+
+  img {
+    max-width: 60px;
+    &:active {
+      scale: .9;
+    }
+  }
+}
+
+.next-pokemon {
+  right: 0;
+}
+
+.prev-pokemon {
+  left: 0;
+  
+  
+  img {
+    transform: rotate(-180deg);
+  }
+}

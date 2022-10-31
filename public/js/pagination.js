@@ -20,7 +20,6 @@ const pagEndButtons = [
 ]
 // hide last elements in pagination if user is on last page
 if(pageEndPoint === `page=${pagesLength}`) {
-    console.log('red');
     pagEndButtons.forEach(item => item.classList.add('hidden'));
 } else if(pageEndPoint === `page=1`) {
     document.getElementById('first-page').classList.add('hidden');

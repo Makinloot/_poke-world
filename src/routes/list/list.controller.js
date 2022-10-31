@@ -26,7 +26,7 @@ async function httpGetList(req, res) {
     const pageLength = Math.floor(list_data.count / limit);
 
     res.render('html/assets/list', {
-        list: list_data.results.map(item => item.name),
+        list: list_data.results.map(item => item.name.split('-').join(' ')),
         current_page: page,
         last_page: pageLength,
         images: imgArr,

@@ -5,7 +5,8 @@ async function httpGetPokemon(req, res) {
     try {
         // fetch pokemon general data
         const name = req.params.pokemonName;
-        const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
+        const id = req.params.pokemonId;
+        const url = `https://pokeapi.co/api/v2/pokemon/${name}` || `https://pokeapi.co/api/v2/pokemon/${id}`;
         const api_res = await fetch(url);
         const api_data = await api_res.json();
 
@@ -18,6 +19,7 @@ async function httpGetPokemon(req, res) {
         const flavorTexts = species_data.flavor_text_entries.filter(item => item.language.name === 'en');
 
         res.render('html/assets/pokemon', {
+            id: api_data.id,
             name: api_data.name,
             img_src: api_data.sprites.other['official-artwork'].front_default || api_data.sprites.front_default || 'https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?fit=845%2C503&ssl=1',
             stats: api_data.stats.map(item => item.base_stat),

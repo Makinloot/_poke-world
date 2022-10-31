@@ -21,4 +21,11 @@
         text-transform: uppercase;
         font-family: sans-serif;
     }
+
+    a {
+        text-transform: capitalize;
+        font-family: $ff-acumin;
+        font-size: 1.5rem;
+        color: $clr-purple;
+    }
 }
