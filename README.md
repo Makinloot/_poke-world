@@ -10,6 +10,6 @@ start app scripts:
 
   - npm run start - runs app locally.
 
-  - npm run startDev - if you install nodemon in dev dependencies runs and watches any changes on app localy.
+  - npm run startDev - if you install nodemon in dev dependencies runs and watches any changes on app locally.
 
   - npm run renderPug - renders pug and watches any changes in views directory.
