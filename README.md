@@ -4,7 +4,7 @@ This app lets you search your favourite pokemon and fetch it's data.
 
 Currently over 900 pokemon avaliable.
 
-To run this app locally just install few dependendencies written in package.json
+To run this app just install few dependendencies written in package.json
 
 start app scripts:
 
